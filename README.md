@@ -1,2 +1,4 @@
-# web-340
- repo for web-340 course at bellevue 
+# WEB 340 Node.js
+## Contributors
+- Richard Krasso
+- Will Southard
