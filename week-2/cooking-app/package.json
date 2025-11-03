@@ -1,0 +1,12 @@
+{
+  "name": "cooking-app",
+  "version": "1.0.0",
+  "description": "A simple recipe application using Node.js CommonJS module system",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "test": "node tester.js"
+  },
+  "dependencies": {}
+}
+
