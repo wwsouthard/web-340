@@ -1,0 +1,17 @@
+{
+  "name": "distance-calculator",
+  "version": "1.0.0",
+  "description": "Chapter 3 programming exercise from Pragmatic Node.js using TDD and assert.",
+  "type": "module",
+  "scripts": {
+    "test": "node test/distance-calculator.spec.js"
+  },
+  "keywords": [
+    "nodejs",
+    "tdd",
+    "assert",
+    "astronomical-units"
+  ],
+  "author": "Will Southard",
+  "license": "MIT"
+}
