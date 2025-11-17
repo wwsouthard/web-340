@@ -1,27 +1,52 @@
 /**
- * Author:
- * Date:
- * File Name:
- * Description:
+ * Author: Will Southard
+ * Date: November 16, 2025
+ * File Name: index.js
+ * Description: CLI program for Taco Stand EventEmitter
  */
 
 "use strict";
 
-const readline = require("readline");
-const TacoStandEmitter = require("./tacoStand");
+const TacoStandEmitter = require("./taco-stand");
 
 const tacoStand = new TacoStandEmitter();
 
-const rl = readline.createInterface({
-  input: process.stdin,
-  output: process.stdout
+// Set up event listeners
+tacoStand.on("serve", (customer) => {
+  console.log(`Taco Stand serves: ${customer}`);
 });
 
-// TODO: Set up event listeners for the tacoStand object
-rl.on("line", (input) => {
-  const [command, ...args] = input.split(" ");
-
-  // TODO: Handle the commands
+tacoStand.on("prepare", (taco) => {
+  console.log(`Taco Stand prepares: ${taco}`);
 });
 
-console.log(`Enter a command: "serve", "prepare", or "rush", followed by a space and the argument.`);
+tacoStand.on("rush", (rush) => {
+  console.log(`Taco Stand handles rush: ${rush}`);
+});
+
+// Handle command-line arguments
+const args = process.argv.slice(2);
+
+if (args.length < 2) {
+  console.error("Error: Invalid command. Usage: node index.js <command> <argument>");
+  console.error("Commands: serve, prepare, rush");
+  process.exit(1);
+}
+
+const [command, ...commandArgs] = args;
+const argument = commandArgs.join(" ");
+
+switch (command) {
+  case "serve":
+    tacoStand.serveCustomer(argument);
+    break;
+  case "prepare":
+    tacoStand.prepareTaco(argument);
+    break;
+  case "rush":
+    tacoStand.handleRush(argument);
+    break;
+  default:
+    console.error(`Error: Invalid command "${command}". Valid commands are: serve, prepare, rush`);
+    process.exit(1);
+}
