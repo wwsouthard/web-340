@@ -1,0 +1,20 @@
+{
+  "name": "chapter5",
+  "version": "1.0.0",
+  "description": "Chapter 5 Programming Exercise - Process, OS, Events, and Event Loop",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "test": "node tests/run-all-tests.js"
+  },
+  "keywords": [
+    "nodejs",
+    "process",
+    "os",
+    "events",
+    "event-loop"
+  ],
+  "author": "Will Southard",
+  "license": "ISC"
+}
+
